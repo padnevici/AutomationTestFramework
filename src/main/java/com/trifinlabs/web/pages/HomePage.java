@@ -1,5 +1,7 @@
 package com.trifinlabs.web.pages;
 
+import com.trifinlabs.web.Browser;
+import com.trifinlabs.web.Configs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,10 +11,4 @@ import org.slf4j.LoggerFactory;
  */
 public class HomePage extends AbstractPage {
     final Logger logger = LoggerFactory.getLogger(HomePage.class);
-
-
-
-//    public boolean isAt() {
-//       return isAt();
-//    }
 }

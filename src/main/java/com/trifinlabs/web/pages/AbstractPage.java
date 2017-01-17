@@ -8,7 +8,7 @@ import com.trifinlabs.web.Configs;
 /**
  * Created by padne_000 on 1/16/2017.
  */
-public abstract class AbstractPage implements IsAt {
+public abstract class AbstractPage implements IPage {
     final Logger logger = LoggerFactory.getLogger(HomePage.class);
     final String pageName = this.getClass().getSimpleName();
 
@@ -28,5 +28,9 @@ public abstract class AbstractPage implements IsAt {
         logger.info(String
                 .format("Title for [%s] page is not correct", pageName));
         return false;
+    }
+
+    public void navigateTo() {
+        Browser.navigate(Configs.getPageUrls().getProperty(this.getClass().getSimpleName()));
     }
 }

@@ -10,13 +10,14 @@ import org.springframework.core.io.support.PropertiesLoaderUtils;
 public class Configs {
     private static Properties pageTitles;
     private static Properties application;
+    private static Properties pageUrls;
 
     public static Properties getPageTitles() {
-        Resource pageTitlesResource = new ClassPathResource("/page-titles" +
+        Resource resource = new ClassPathResource("/page-titles" +
                 ".properties");
         try {
             pageTitles = PropertiesLoaderUtils.loadProperties
-                    (pageTitlesResource);
+                    (resource);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -24,15 +25,26 @@ public class Configs {
     }
 
     public static Properties getApplication() {
-        Resource applicationResource = new ClassPathResource("/application" +
+        Resource resource = new ClassPathResource("/application" +
                 ".properties");
         try {
             application = PropertiesLoaderUtils.loadProperties
-                    (applicationResource);
+                    (resource);
         } catch (IOException e) {
             e.printStackTrace();
         }
         return application;
     }
 
+    public static Properties getPageUrls() {
+        Resource resource = new ClassPathResource("/page-urls" +
+                ".properties");
+        try {
+            pageUrls = PropertiesLoaderUtils.loadProperties
+                    (resource);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return pageUrls;
+    }
 }

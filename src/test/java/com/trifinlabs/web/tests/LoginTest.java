@@ -29,8 +29,8 @@ public class LoginTest {
         Pages pages = (Pages) context.getBean("pages");
         logger.info("Entering: I navigate to the mock application");
         Browser.initialize();
-        Browser.navigate(Configs.getApplication().getProperty("defaul-url"));
         HomePage homePage = pages.getPage(HomePage.class);
+        homePage.navigateTo();
         Assert.assertTrue(homePage.isAt());
     }
 
